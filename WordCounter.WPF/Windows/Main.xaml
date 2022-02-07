@@ -37,7 +37,7 @@
                 <Label>Уникальных слов:</Label>
                 <Label x:Name="UniqueWordsLb" FontWeight="Bold" Content="0" Margin="0 0 20 0"/>
                 <Label>Всего слов:</Label>
-                <Label x:Name="TotalLb" FontWeight="Bold" d:Content="0" Margin="0 0 20 0"/>
+                <Label x:Name="TotalLb" FontWeight="Bold" Content="0" Margin="0 0 20 0"/>
             </StackPanel>
             <!--Words-->
             <Grid Grid.Row="2" Background="#eee">
