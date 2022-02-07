@@ -49,7 +49,6 @@ namespace WordCounter.WPF.Windows
                 }
                 TotalLb.Content = totalWords;
 
-
                 Service.StatisticsService.SendStatistics(words);
 
             }
@@ -57,9 +56,8 @@ namespace WordCounter.WPF.Windows
             {
                 MessageBox.Show(ex.Message + "\n\nStack trace: \n" + ex.StackTrace);
             }
-
-
         }
+
 
         private async void StatisticsBtn_Click(object sender, RoutedEventArgs e)
         {

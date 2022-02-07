@@ -26,7 +26,7 @@ namespace WordCounter.Lib.Services
             }
             catch (Exception ex)
             {
-                throw new Exceptions.CounterException("Can't fetch from url", ex);
+                throw new Exceptions.CounterException("Can't fetch from url. Check your url or try another.\nThat's not a library error.", ex);
             }
         }
 
@@ -38,6 +38,10 @@ namespace WordCounter.Lib.Services
                 {
                     return sr.ReadToEnd();
                 }
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new Exceptions.CounterException("File does not exist", ex);
             }
             catch (Exception ex)
             {
