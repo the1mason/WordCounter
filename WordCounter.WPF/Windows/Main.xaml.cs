@@ -28,29 +28,64 @@ namespace WordCounter.WPF.Windows
 
         private async void CountBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(SourceTb.Text))
+            try
             {
-                MessageBox.Show("Fill the source field by attaching a file or entering URL");
-                return;
-            }
-            WordsSp.Children.Clear();
-            List<Lib.Word> words = Service.CounterService.GetHtmlCount(SourceTb.Text);
-            words = words.OrderByDescending(x => x.Count).ToList();
-            words.ForEach(x => WordsSp.Children.Add(new Views.Word(x)));
+                if (String.IsNullOrWhiteSpace(SourceTb.Text))
+                {
+                    MessageBox.Show("Fill the source field by attaching a file or entering URL");
+                    return;
+                }
+                WordsSp.Children.Clear();
+                List<Lib.Word> words = Service.CounterService.GetHtmlCount(SourceTb.Text);
+                words = words.OrderByDescending(x => x.Count).ToList();
+                words.ForEach(x => WordsSp.Children.Add(new Views.Word(x)));
 
-            UniqueWordsLb.Content = words.Count;
+                UniqueWordsLb.Content = words.Count;
 
-            int totalWords = 0;
-            foreach (Lib.Word word in words)
-            {
-                totalWords += word.Count;
+                int totalWords = 0;
+                foreach (Lib.Word word in words)
+                {
+                    totalWords += word.Count;
+                }
                 TotalLb.Content = totalWords;
+
+
+                Service.StatisticsService.SendStatistics(words);
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n\nStack trace: \n" + ex.StackTrace);
+            }
+
+
         }
 
         private async void StatisticsBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("WIP");
+            try
+            {
+               
+                WordsSp.Children.Clear();
+                List<Lib.Word> words = Service.StatisticsService.GetStatistics();
+                words = words.OrderByDescending(x => x.Count).ToList();
+                words.ForEach(x => WordsSp.Children.Add(new Views.Word(x)));
+
+                UniqueWordsLb.Content = words.Count;
+
+                int totalWords = 0;
+                foreach (Lib.Word word in words)
+                {
+                    totalWords += word.Count;
+                }
+                TotalLb.Content = totalWords;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n\nStack trace: \n" + ex.StackTrace);
+            }
+
+
         }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)

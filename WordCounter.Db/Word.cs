@@ -9,9 +9,8 @@ namespace WordCounter.Db
 {
     public class Word
     {
-        public int Id { get; set; }
+        [Key]
         public string Value { get; set; }
-        public string Source { get; set; }
         public int Count { get; set; }
     }
 }

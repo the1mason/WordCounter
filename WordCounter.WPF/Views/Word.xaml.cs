@@ -25,7 +25,6 @@ namespace WordCounter.WPF.Views
             InitializeComponent();
             WordValueLb.Content = word.Value;
             WordCountLb.Content = word.Count;
-            WordSource.Content = word.Source;
         }
     }
 }

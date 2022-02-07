@@ -34,7 +34,7 @@ namespace WordCounter.Lib
             if (method == ICounter.Method.HTML)
             {
                 HtmlParser parser = new();
-                return GetWords(parser.Parse(rawFile), source);
+                return GetWords(parser.Parse(rawFile));
             }
             else
             {
@@ -42,7 +42,7 @@ namespace WordCounter.Lib
             }
         }
 
-        private List<Word> GetWords(List<string> parsedWords, string source)
+        private List<Word> GetWords(List<string> parsedWords)
         {
             List<Word> words = new();
             foreach (string parsedWord in parsedWords)
@@ -53,7 +53,7 @@ namespace WordCounter.Lib
                 }
                 else
                 {
-                    words.Add(new() { Count = 1, Value = parsedWord, Source = source });
+                    words.Add(new() { Count = 1, Value = parsedWord});
                 }
             }
             return words;

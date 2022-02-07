@@ -9,7 +9,6 @@ namespace WordCounter.Lib
     public class Word
     {
         public string Value { get; set; }
-        public string Source { get; set; }
         public int Count { get; set; }
     }
 }
