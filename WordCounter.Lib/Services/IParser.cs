@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WordCounter.Lib.Services
 {
-    internal class IParserService
+    public interface IParser
     {
+        public List<string> Parse(string input);
     }
 }

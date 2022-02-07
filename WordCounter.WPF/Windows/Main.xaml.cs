@@ -34,6 +34,10 @@ namespace WordCounter.WPF.Windows
                 return;
             }
             WordsSp.Children.Clear();
+            List<Lib.Word> words = Service.CounterService.GetHtmlCount(SourceTb.Text);
+            words = words.OrderByDescending(x => x.Count).ToList();
+            words.ForEach(x => WordsSp.Children.Add(new Views.Word(x)));
+
         }
 
         private async void StatisticsBtn_Click(object sender, RoutedEventArgs e)
