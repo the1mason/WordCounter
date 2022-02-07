@@ -50,6 +50,7 @@ namespace WordCounter.WPF.Windows
 
         private async void StatisticsBtn_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("WIP");
         }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
