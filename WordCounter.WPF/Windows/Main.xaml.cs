@@ -38,6 +38,14 @@ namespace WordCounter.WPF.Windows
             words = words.OrderByDescending(x => x.Count).ToList();
             words.ForEach(x => WordsSp.Children.Add(new Views.Word(x)));
 
+            UniqueWordsLb.Content = words.Count;
+
+            int totalWords = 0;
+            foreach (Lib.Word word in words)
+            {
+                totalWords += word.Count;
+                TotalLb.Content = totalWords;
+            }
         }
 
         private async void StatisticsBtn_Click(object sender, RoutedEventArgs e)

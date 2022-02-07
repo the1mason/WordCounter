@@ -12,6 +12,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <!--Source selector & filtering-->
@@ -32,8 +33,14 @@
                     </StackPanel>
                 </StackPanel>
             </Grid>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label>Уникальных слов:</Label>
+                <Label x:Name="UniqueWordsLb" FontWeight="Bold" Content="0" Margin="0 0 20 0"/>
+                <Label>Всего слов:</Label>
+                <Label x:Name="TotalLb" FontWeight="Bold" d:Content="0" Margin="0 0 20 0"/>
+            </StackPanel>
             <!--Words-->
-            <Grid Grid.Row="1" Background="#eee">
+            <Grid Grid.Row="2" Background="#eee">
                 <ScrollViewer>
                     <StackPanel x:Name="WordsSp"/>
                 </ScrollViewer>
