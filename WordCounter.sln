@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Lib", "WordCounter.Lib\WordCounter.Lib.csproj", "{7A321A9A-BB26-4C6E-93BD-833248F01B1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCouner.WPF", "WordCouner.WPF\WordCouner.WPF.csproj", "{0FFB327E-A302-4F14-A674-BB4F65EBD7AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.WPF", "WordCouner.WPF\WordCounter.WPF.csproj", "{0FFB327E-A302-4F14-A674-BB4F65EBD7AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Db", "WordCounter.Db\WordCounter.Db.csproj", "{7BB12E74-CA2C-4A75-8C08-02599DAE008E}"
 EndProject

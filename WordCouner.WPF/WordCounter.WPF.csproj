@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WordCounter.Db\WordCounter.Db.csproj" />
+    <ProjectReference Include="..\WordCounter.Lib\WordCounter.Lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\Img\wordcounter-1mico.ico" />
     <Resource Include="Assets\Img\wordcounter-1mico.png" />
   </ItemGroup>

@@ -13,16 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WordCouner.WPF.Views
+namespace WordCounter.WPF.Views
 {
     /// <summary>
     /// Логика взаимодействия для Word.xaml
     /// </summary>
     public partial class Word : UserControl
     {
-        public Word()
+        public Word(Lib.Word word)
         {
             InitializeComponent();
+            WordValueLb.Content = word.Value;
+            WordCountLb.Content = word.Count;
+            WordSource.Content = word.Source;
         }
     }
 }

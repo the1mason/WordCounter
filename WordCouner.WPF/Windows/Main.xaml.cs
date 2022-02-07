@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WordCouner.WPF.Windows
+namespace WordCounter.WPF.Windows
 {
     /// <summary>
     /// Логика взаимодействия для Main.xaml
@@ -26,14 +26,18 @@ namespace WordCouner.WPF.Windows
             InitializeComponent();
         }
 
-        private void CountBtn_Click(object sender, RoutedEventArgs e)
+        private async void CountBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (String.IsNullOrWhiteSpace(SourceTb.Text))
+            {
+                MessageBox.Show("Fill the source field by attaching a file or entering URL");
+                return;
+            }
+            WordsSp.Children.Clear();
         }
 
-        private void StatisticsBtn_Click(object sender, RoutedEventArgs e)
+        private async void StatisticsBtn_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
