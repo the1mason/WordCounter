@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Img\wci.ico</ApplicationIcon>
+    <PackageId>WordCounter.Console</PackageId>
+    <Authors>the1mason</Authors>
+    <Company>Private person</Company>
+    <Product>WordCounter</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icon\wordcounter-t1mappico-gen.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Img\wci.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WordCounter.Lib\WordCounter.Lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icon\wordcounter-t1mappico-gen.png" />
+  </ItemGroup>
+
+</Project>

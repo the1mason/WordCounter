@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\Img\wordcounter-1mico.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Img\wordcounter-1mico.ico" />
+    <None Remove="Assets\Img\wordcounter-1mico.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Img\wordcounter-1mico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Img\wordcounter-1mico.ico" />
+    <Resource Include="Assets\Img\wordcounter-1mico.png" />
+  </ItemGroup>
+
+</Project>
